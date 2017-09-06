@@ -1,0 +1,28 @@
+{
+  "name": "essentim-api-examples",
+  "version": "0.1.0",
+  "description": "Example code to show interaction with essentim api",
+  "main": "index.js",
+  "scripts": {
+    "list": "node list-devices.js",
+    "subscribe": "node subscribe-data.js",
+    "register": "node register-device.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.io-labs.de:essentim/essentim-api-examples.git"
+  },
+  "keywords": [
+    "essentim",
+    "api",
+    "example"
+  ],
+  "author": "Bruno Schliersmair <bruno.schliersmair@essentim.com>",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^1.7.2",
+    "socket.io-client": "^2.0.3",
+    "underscore": "^1.8.3"
+  }
+}
