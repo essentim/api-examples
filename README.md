@@ -35,9 +35,9 @@ npm run <example-name>
 ```
 
 # Documentation
-All API endpoints can be accessed via [swagger-io](http://scouter.essentim.com:3001/api/v1/documentation)
+All API endpoints can be accessed via [swagger-io](http://scouter.essentim.com:3001/documentation)
 ```
-open http://scouter.essentim.com:3001/api/v1/documentation
+open http://scouter.essentim.com:3001/documentation
 ```
 
 
