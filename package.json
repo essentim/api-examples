@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "list": "node list-devices.js",
-    "subscribe": "node subscribe-data.js",
+    "subscribe-data": "node subscribe-data.js",
+    "subscribe-location": "node subscribe-location.js",
     "register": "node register-device.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

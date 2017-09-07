@@ -1,6 +1,5 @@
 'use strict';
-//const host = "http://scouter.essentim.com";
-const host = "http://localhost:3001";
+const host = "http://scouter.essentim.com";
 
 const config = {
   api: {

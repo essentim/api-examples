@@ -55,6 +55,7 @@ a device with the id **MyDeviceID** and provides one temperature sensor.
 ```
 npm run register
 ``` 
+**INFO: The Webapplications needs to be reloaded to show new registered devices**
 
 You can modify this script by editing this block
 ```
@@ -98,7 +99,7 @@ This Example shows how to connect to the pub/sub api to retrieve sensordata for 
 The code snippet will connect to the socket.io pub/sub system. Every new sensor value will emit an event and will be 
 received from the local code.
 ```
-npm run subscribe <device-id>
+npm run subscribe-data <device-id>
 ``` 
 To forward the subscribed sensor data in your own application modify the method *handleDeviceDataEvent*.  
 The passed argument will be an JSON-object of this type:
@@ -116,5 +117,11 @@ The passed argument will be an JSON-object of this type:
    } 
 }
 ```
+## Subscribe Device Location
+Same example like data subscription, but listens to location events on the pub/sub system.  
+the emitted event will contain location name, id and timestamp.
+```
+npm run subscribe-location <device-id>
+``` 
 
 

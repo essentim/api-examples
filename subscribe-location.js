@@ -56,7 +56,7 @@ fetch(apiUrl+"/devices/"+deviceId)
   })
   //subscribe to pubsub interface
   .then(() => {
-    io.on("/devices/"+deviceId+"/data",handleDeviceDataEvent)
+    io.on("/devices/"+deviceId+"/location",handleDeviceDataEvent)
   })
   .catch(err=>{
     console.log("Error:",err.message);
@@ -68,12 +68,10 @@ fetch(apiUrl+"/devices/"+deviceId)
 
 
 //callback function to handle event emitted by the api
-function handleDeviceDataEvent (event) {
-  let datapoint = event.point;
-  let sensorConfig = sensorMap[datapoint.sensorId];
-  //skip unknown sensors
-  if (!sensorConfig) {
-    return;
+function handleDeviceDataEvent (locationEvent) {
+  if (!locationEvent) {
+    console.log("->  Unknown");
+  } else {
+    console.log("-> ", locationEvent.name, "(", locationEvent.id, ")", " since", new Date(locationEvent.since));
   }
-  console.log("-> ",(new Date(datapoint.timestamp)).toTimeString(),sensorConfig.name,datapoint.value,sensorConfig.unit);
 }
