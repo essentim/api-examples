@@ -4,7 +4,7 @@ Installers are available on https://nodejs.org/en/
 
 # Installation
 After cloning the repository, install npm dependencies:
-```
+```bash
 cd <project-folder>
 npm install
 ```
@@ -14,7 +14,7 @@ essentim system, in assumption to be connected via wifi to the scouter.
 To change the configuration, please edit the configuration
 
 *config.js*
-```
+```javascript
 const host = "http://scouter.essentim.com";
 const config = {
   api: {
@@ -30,13 +30,13 @@ const config = {
 ```
 
 Now you can run the examples
-```
+```bash
 npm run <example-name>
 ```
 
 # Documentation
 All API endpoints can be accessed via [swagger-io](http://scouter.essentim.com:3001/documentation)
-```
+```bash
 open http://scouter.essentim.com:3001/documentation
 ```
 
@@ -45,20 +45,20 @@ open http://scouter.essentim.com:3001/documentation
 
 ## List Devices
 This code snippet will connect to the api and list all registered devices and available Sensors.  
-``` 
+```bash
 npm run list
 ```
 
 ## Register Device and Push Data
 This Example shows how to register a own device and push data to the api. The default configuration registers
 a device with the id **MyDeviceID** and provides one temperature sensor.
-```
+```bash
 npm run register
 ``` 
 **INFO: The Webapplications needs to be reloaded to show new registered devices**
 
 You can modify this script by editing this block
-```
+```javascript
 /** configure device properties here **/
 deviceID = "MyDeviceID"; //unique id that represents the device. e.g. mac-address or serial number
                          // --> ONLY ALPHANUMERIC AND UNDERSCORE
@@ -76,7 +76,7 @@ To push data triggered by another event, you can just call the api like the func
 Make sure the device is registered before sending data! Otherwise the request will be rejected with an 404.
 The data push endpoint expects an payload with following format.  
 Multiple Datapoints can be sent as bulk request.
-```
+```javascript
 {
     datapoints: [
       {
@@ -98,12 +98,12 @@ This Example shows how to connect to the pub/sub api to retrieve sensordata for 
 
 The code snippet will connect to the socket.io pub/sub system. Every new sensor value will emit an event and will be 
 received from the local code.
-```
+```bash
 npm run subscribe-data <device-id>
 ``` 
 To forward the subscribed sensor data in your own application modify the method *handleDeviceDataEvent*.  
 The passed argument will be an JSON-object of this type:
-```
+```javascript
 { 
   point: 
    { 
@@ -120,7 +120,7 @@ The passed argument will be an JSON-object of this type:
 ## Subscribe Device Location
 Same example like data subscription, but listens to location events on the pub/sub system.  
 the emitted event will contain location name, id and timestamp.
-```
+```bash
 npm run subscribe-location <device-id>
 ``` 
 
