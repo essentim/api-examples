@@ -16,7 +16,7 @@ console.log();
 
 if (!deviceId || deviceId === "undefined") {
   console.log("no device id specified!");
-  process.exit(1);
+  process.exit();
 }
 
 var sensorMap = {}; //map sensorId to sensor configuration and meta-data
@@ -60,7 +60,7 @@ fetch(apiUrl+"/devices/"+deviceId)
   })
   .catch(err=>{
     console.log("Error:",err.message);
-    process.exit(1)
+    process.exit();
   })
   .then(() => {
     console.log("press Ctrl-C to quit");

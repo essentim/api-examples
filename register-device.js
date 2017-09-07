@@ -53,7 +53,7 @@ fetch(apiUrl+"/devices/"+deviceID,{
   })
   .catch(err=>{
     console.log("Error:",err.message);
-    process.exit(1);
+    process.exit();
   })
   .then(()=>{
     console.log("Press Ctrl-C to quit");
@@ -81,6 +81,6 @@ function pushData(deviceId) {
     .then(checkStatus)
     .catch(err=>{
       console.log("Error:",err.message);
-      process.exit(1);
+      process.exit();
     })
 }
