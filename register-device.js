@@ -1,3 +1,5 @@
+"use strict";
+
 const config = require('./config');
 const fetch = require('node-fetch');
 const apiUrl = config.api.host+config.api.path;
@@ -6,13 +8,13 @@ console.log("using api:",apiUrl);
 console.log();
 
 /** configure device properties here **/
-deviceID = "MyDeviceID"; //unique id that represents the device. e.g. mac-address or serial number
+const deviceID = "MyDeviceID"; //unique id that represents the device. e.g. mac-address or serial number
                          // --> ONLY ALPHANUMERIC AND UNDERSCORE
-deviceName = "My Custom Device";
-sensorID = "temp"; //unique id for the sensor on this device
-sensorName = "Temperature"; //name to display for the values
-sensorDescription = "external"; //provide additional information for the sensor. e.g. position or index
-sensorMeasurand = "temperature"; //specify the physical quantity of the delivered value
+const deviceName = "My Custom Device";
+const sensorID = "temp"; //unique id for the sensor on this device
+const sensorName = "Temperature"; //name to display for the values
+const sensorDescription = "external"; //provide additional information for the sensor. e.g. position or index
+const sensorMeasurand = "temperature"; //specify the physical quantity of the delivered value
 /** end device configuration **/
 
 //build json from defined variables

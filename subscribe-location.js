@@ -1,3 +1,5 @@
+"use strict";
+
 const config = require('./config');
 const fetch = require('node-fetch');
 const checkStatus = require('./lib/fetch').checkStatus;
