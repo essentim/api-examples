@@ -7,6 +7,7 @@
     "list": "node list-devices.js",
     "subscribe-data": "node subscribe-data.js",
     "subscribe-location": "node subscribe-location.js",
+    "subscribe-events": "node subscribe-events.js",
     "register": "node register-device.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

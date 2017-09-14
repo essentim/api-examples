@@ -124,4 +124,9 @@ the emitted event will contain location name, id and timestamp.
 npm run subscribe-location <device-id>
 ``` 
 
-
+## Subscribe Events
+Example how to subscribe to events. All events are fired on the same socket.io channel.
+If an event is bound to a device, the property "device" will be set to the device id
+```
+npm run subscribe-events [<device-id>]
+``` 
